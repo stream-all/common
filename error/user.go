@@ -1,6 +1,6 @@
 package error
 
-// user错误码 1000-2000
+// user服务错误码 1000-2000
 const (
 	CodeUserExist     errorCode = 1001
 	CodeUserNotExist  errorCode = 1002
