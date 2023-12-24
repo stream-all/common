@@ -14,22 +14,20 @@ service User {
 }
 
 message UserInfo {
-  int64 uid = 1;
+  uint64 uid = 1;
   string email = 2;
   string nick_name = 3;
   Image avatar = 4;
 }
 
 message LogoutRequest {
-  string uid = 1;
+  uint64 uid = 1;
   string token = 2;
 }
-message LogoutResponse {
-  string msg = 1;
-}
+message LogoutResponse {}
 
 message GetUserRequest {
-  string uid = 1;
+  uint64 uid = 1;
 }
 message GetUserResponse {
   UserInfo user_info = 1;
@@ -49,7 +47,7 @@ message CreateUserRequest {
   optional bool need_login = 3;
 }
 message CreateUserResponse {
-  int64 uid = 1;
+  uint64 uid = 1;
   optional string token = 2;
 }
 
