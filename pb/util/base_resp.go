@@ -5,6 +5,13 @@ import (
 	"github.com/stream-all/common/pb/error"
 )
 
+func OkBaseResp() *pb.BaseResp {
+	return &pb.BaseResp{
+		Code: error.CodeOk,
+		Msg:  "ok",
+	}
+}
+
 func BaseResp(code int32, msg string) *pb.BaseResp {
 	return &pb.BaseResp{
 		Code: code,
