@@ -1,6 +1,6 @@
 syntax = "proto3";
 package idl;
-option go_package = "./pb";
+option go_package = "github.com/stream-all/common/pb";
 
 import "base.proto";
 
@@ -24,13 +24,17 @@ message LogoutRequest {
   uint64 uid = 1;
   string token = 2;
 }
-message LogoutResponse {}
+message LogoutResponse {
+  BaseResp base = 255;
+}
 
 message GetUserRequest {
   uint64 uid = 1;
 }
 message GetUserResponse {
   UserInfo user_info = 1;
+
+  BaseResp base = 255;
 }
 
 message LoginRequest {
@@ -39,6 +43,8 @@ message LoginRequest {
 }
 message LoginResponse {
   string token = 1;
+
+  BaseResp base = 255;
 }
 
 message CreateUserRequest {
@@ -49,6 +55,8 @@ message CreateUserRequest {
 message CreateUserResponse {
   uint64 uid = 1;
   optional string token = 2;
+
+  BaseResp base = 255;
 }
 
 message PingRequest {
@@ -56,4 +64,6 @@ message PingRequest {
 }
 message PingResponse {
   string msg = 1;
+
+  BaseResp base = 255;
 }
